@@ -1,0 +1,3 @@
+C:\Users\getsh\source\repos\ConsoleUI\obj\Debug\netcoreapp3.1\BUSINESSLAYER.AssemblyInfoInputs.cache
+C:\Users\getsh\source\repos\ConsoleUI\obj\Debug\netcoreapp3.1\BUSINESSLAYER.AssemblyInfo.cs
+C:\Users\getsh\source\repos\ConsoleUI\obj\Debug\netcoreapp3.1\BUSINESSLAYER.csproj.CoreCompileInputs.cache

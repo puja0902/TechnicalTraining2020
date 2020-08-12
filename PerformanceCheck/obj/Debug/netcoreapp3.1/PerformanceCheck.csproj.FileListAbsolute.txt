@@ -1,0 +1,13 @@
+C:\Users\getsh\source\repos\PerformanceCheck\obj\Debug\netcoreapp3.1\PerformanceCheck.csprojAssemblyReference.cache
+C:\Users\getsh\source\repos\PerformanceCheck\obj\Debug\netcoreapp3.1\PerformanceCheck.AssemblyInfoInputs.cache
+C:\Users\getsh\source\repos\PerformanceCheck\obj\Debug\netcoreapp3.1\PerformanceCheck.AssemblyInfo.cs
+C:\Users\getsh\source\repos\PerformanceCheck\obj\Debug\netcoreapp3.1\PerformanceCheck.csproj.CoreCompileInputs.cache
+C:\Users\getsh\source\repos\PerformanceCheck\bin\Debug\netcoreapp3.1\PerformanceCheck.exe
+C:\Users\getsh\source\repos\PerformanceCheck\bin\Debug\netcoreapp3.1\PerformanceCheck.deps.json
+C:\Users\getsh\source\repos\PerformanceCheck\bin\Debug\netcoreapp3.1\PerformanceCheck.runtimeconfig.json
+C:\Users\getsh\source\repos\PerformanceCheck\bin\Debug\netcoreapp3.1\PerformanceCheck.runtimeconfig.dev.json
+C:\Users\getsh\source\repos\PerformanceCheck\bin\Debug\netcoreapp3.1\PerformanceCheck.dll
+C:\Users\getsh\source\repos\PerformanceCheck\bin\Debug\netcoreapp3.1\PerformanceCheck.pdb
+C:\Users\getsh\source\repos\PerformanceCheck\obj\Debug\netcoreapp3.1\PerformanceCheck.dll
+C:\Users\getsh\source\repos\PerformanceCheck\obj\Debug\netcoreapp3.1\PerformanceCheck.pdb
+C:\Users\getsh\source\repos\PerformanceCheck\obj\Debug\netcoreapp3.1\PerformanceCheck.genruntimeconfig.cache
