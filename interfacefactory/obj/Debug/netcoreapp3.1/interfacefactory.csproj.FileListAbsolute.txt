@@ -1,0 +1,3 @@
+C:\Users\getsh\source\repos\interfacefactory\obj\Debug\netcoreapp3.1\interfacefactory.AssemblyInfoInputs.cache
+C:\Users\getsh\source\repos\interfacefactory\obj\Debug\netcoreapp3.1\interfacefactory.AssemblyInfo.cs
+C:\Users\getsh\source\repos\interfacefactory\obj\Debug\netcoreapp3.1\interfacefactory.csproj.CoreCompileInputs.cache
