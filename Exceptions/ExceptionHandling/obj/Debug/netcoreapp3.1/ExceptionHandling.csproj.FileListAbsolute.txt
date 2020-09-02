@@ -1,0 +1,13 @@
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\obj\Debug\netcoreapp3.1\ExceptionHandling.csprojAssemblyReference.cache
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\obj\Debug\netcoreapp3.1\ExceptionHandling.AssemblyInfoInputs.cache
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\obj\Debug\netcoreapp3.1\ExceptionHandling.AssemblyInfo.cs
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\obj\Debug\netcoreapp3.1\ExceptionHandling.csproj.CoreCompileInputs.cache
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\bin\Debug\netcoreapp3.1\ExceptionHandling.exe
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\bin\Debug\netcoreapp3.1\ExceptionHandling.deps.json
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\bin\Debug\netcoreapp3.1\ExceptionHandling.runtimeconfig.json
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\bin\Debug\netcoreapp3.1\ExceptionHandling.runtimeconfig.dev.json
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\bin\Debug\netcoreapp3.1\ExceptionHandling.dll
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\bin\Debug\netcoreapp3.1\ExceptionHandling.pdb
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\obj\Debug\netcoreapp3.1\ExceptionHandling.dll
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\obj\Debug\netcoreapp3.1\ExceptionHandling.pdb
+C:\Users\getsh\source\repos\Exceptions\ExceptionHandling\obj\Debug\netcoreapp3.1\ExceptionHandling.genruntimeconfig.cache
