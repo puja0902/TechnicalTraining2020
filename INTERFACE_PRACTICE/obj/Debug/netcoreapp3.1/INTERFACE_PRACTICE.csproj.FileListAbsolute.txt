@@ -1,0 +1,9 @@
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\bin\Debug\netcoreapp3.1\INTERFACE_PRACTICE.deps.json
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\bin\Debug\netcoreapp3.1\INTERFACE_PRACTICE.dll
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\bin\Debug\netcoreapp3.1\INTERFACE_PRACTICE.pdb
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\obj\Debug\netcoreapp3.1\INTERFACE_PRACTICE.csprojAssemblyReference.cache
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\obj\Debug\netcoreapp3.1\INTERFACE_PRACTICE.AssemblyInfoInputs.cache
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\obj\Debug\netcoreapp3.1\INTERFACE_PRACTICE.AssemblyInfo.cs
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\obj\Debug\netcoreapp3.1\INTERFACE_PRACTICE.csproj.CoreCompileInputs.cache
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\obj\Debug\netcoreapp3.1\INTERFACE_PRACTICE.dll
+C:\Users\getsh\source\repos\INTERFACE_PRACTICE\obj\Debug\netcoreapp3.1\INTERFACE_PRACTICE.pdb
