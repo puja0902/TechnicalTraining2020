@@ -1,0 +1,242 @@
+﻿@model PatientAddViewModel
+
+@{
+    Layout = null;
+    var x = 0;
+    x++;
+}
+
+<!DOCTYPE html>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/ClientSide/PatientModel.js"></script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PatientAdd</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>*@
+
+
+</head>
+
+<script >
+
+
+    //var person = {};
+    //person.name = "Mahima";
+    //person.walk = function () {
+
+    //   alert("Start Walking");
+    
+    //}
+
+    //person.walk();
+    //var personFly = {};
+
+    //alert(typeof (personFly));
+    //personFly.prototype = person;
+
+
+    //personFly.fly = function () {
+    //    alert("I can also fly");
+    //}
+
+
+    //personFly.person.walk();
+    //personFly.fly();
+    //var x = 10;
+    //function example() {
+
+    //    alert(typeof(x));
+    //}
+    //example();
+
+    //var example = 100;
+    //alert(example);
+
+    }
+</script>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Add New Patient
+            </div>
+            <div class="card-body">
+                <form method="post" action="/Patient/AddPatient">
+
+                    <div class="form-group">
+                        <label>Patient Name: </label>
+                        <input type="text" name="name" id="txtname" onchange="UpdatePatient()" value="" class="form-control form-control-sm" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Patient Address:</label>
+                        <input type="text" name="address" id="txtaddress" onchange="UpdatePatient()"value="" class="form-control form-control-sm" />
+                    </div>
+                    <div class="form-group">
+                        <label>Patient Email:</label>
+                        <input type="text" name="email" value="" class="form-control form-control-sm" />
+                    </div>
+                   @* <input type="submit" name="name" value="Add patient" class="btn btn-primary btn-sm" />*@
+                    
+                <input type="button" name="btnadd" value="Add Patient" class="btn btn-primary btn-sm" " />
+                </form>
+                <div>
+                    <ul>
+                        @foreach (var item in Model.errors)
+                        {
+                            <li style="color:red;">
+                                @item.ErrorMessage
+                            </li>
+                        }
+
+                    </ul>
+                </div><br />
+                <div>
+                    @if (!(Model.currentPatient is null))
+                    {
+                        @Model.currentPatient.name<br />
+                        @Model.currentPatient.address<br />
+                        @Model.currentPatient.email<br />
+                    }
+                </div>
+                k<form method="post" action="/Patient/AddProblems">
+                    <div class="form-group">
+                        <label>Problems : </label>
+                        <input type="text" name="problem" id="txtproblem" value="" class="form-control form-control-sm" />
+                    </div>
+                    <input type="submit" name="name" value="Add problems" class="btn btn-primary btn-sm" />
+                    </form>  
+                    <br />
+
+                    <form method="post" action="/Patient/AddTreatments">
+                        <div class="form-group">
+                            <label>Name of Medicines : </label>
+                            <input type="text" name="medicineName" value="" class="form-control form-control-sm" />
+                        </div>
+                        <div class="form-group">
+                            <label>Doses :</label>
+                            <input type="text" name="numberOfTimesInDay" value="" class="form-control form-control-sm" />
+                        </div>
+
+                        <input type="submit" value="Add Treatment" class="btn btn-primary btn-sm" />
+                    </form>
+
+                    <br />
+                    <form method="post" action="/Patient/AddToProblems">
+                        <input type="submit" value="Add to problems" class="btn btn-lg btn-primary btn-sm" />
+                    </form>
+
+                    <div class="list-group ">
+                        @if (!(Model.currentPatient is null))
+                        {
+                            @foreach (var item in Model.currentPatient.problems)
+                            {
+                                <a href="#" class="list-group-item"> @item.problem</a>
+
+                                <div class="list-group">
+
+                                    @foreach (var treat in item.treatments)
+                                    {
+                                        <a href="#" class="list-group-item"> @treat.medicineName</a>
+                                        <a href="#" class="list-group-item"> @treat.numberOfTimesInDay</a>
+
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+
+                    <br />
+                    <form method="post" action="/Patient/AddFinal">
+                        <input type="submit" value="Add final" class="btn btn-block btn-lg btn-primary" />
+                    </form>
+
+</div>
+        </div>
+        @*@if (!(</div>Model.currentPatient is null))
+            {
+
+                <ul>
+                    @foreach (var item in Model.currentPatient.problems)
+                    {
+                        <li>
+                            @item.problem
+
+                            @foreach (var treat in item.treatments)
+                            {
+                                @treat.medicineName
+                                @treat.numberOfTimesInDay
+
+                            }
+
+                        </li>
+
+
+                    }
+
+                </ul>
+            }*@
+
+
+
+        <table class="table table-bordered table-hover">
+            <tr>
+                <td><h5>Name</h5></td>
+                <td><h5>Address</h5></td>
+                <td></td>
+            </tr>
+
+            @foreach (var pat in Model.allPatients)
+            {
+                <tr>
+                    <td>@pat.name</td>
+                    <td>@pat.address</td>
+                    <td>
+                        @*<form method="post" action="/Patient/Update">
+                                <input type="submit" value="Edit" class="btn btn-primary btn-sm" name="Edit"/>
+                            </form>*@
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <table class="table table-bordered table-hover">
+                        <tr><td><h5>Problems :</h5></td></tr>
+                        @foreach (var prob in pat.problems)
+                        {
+                            <tr>
+                                <td>
+                                    @prob.problem
+                                </td>
+                            </tr>
+                            <tr><td><h5>Treatment: </h5></td></tr>
+                            @foreach (var treatment in prob.treatments)
+                            {
+                                <tr>
+                                    <td>
+                                        Medicine Name :
+                                        @treatment.medicineName
+                                    </td>
+                                    <td>
+                                        No. of dose :
+                                        @treatment.numberOfTimesInDay
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </table>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
