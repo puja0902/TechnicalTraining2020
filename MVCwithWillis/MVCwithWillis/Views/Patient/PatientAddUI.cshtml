@@ -1,0 +1,222 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/ClientSide/PatientModel.js"></script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PatientAddUI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script>
+        
+        var patient = new Patient();
+
+        function UpdatePatient() {
+            this.patient.name = $("#txtname").val();
+            this.patient.address = $("#txtaddress").val();
+            this.patient.email = $("#txtemail").val();
+           
+        }
+         $("#printPatient").append($('<li>' + this.patient.name + '</li>'));
+         var problemobj;
+
+        function AddProblems() {
+
+            this.problemobj = new PatientProblem();
+            this.problemobj.problem = $("#txtproblem").val();
+
+        }
+        function AddProblemObj() {
+
+            this.patient.problems.push(problemobj);
+            $("#txtproblem").val("");
+        }
+
+        function AddTreatment(problemobj) {
+
+            var treatmentObj = new Treatment();
+            treatmentObj.medicineName = $("#txtMedicineName").val();
+            treatmentObj.numberOfTimesInDay = $("#txtNoOFTimesInDay").val();
+
+            this.problemobj.treatments.push(treatmentObj);
+            $("#txtMedicineName").val("");
+            $("#txtNoOFTimesInDay").val("");
+
+        }
+
+        function Submit() {
+
+            var check = this.patient;
+            
+
+            //$.post("/api/PatientApi", JSON.stringify(check), function (res) {
+
+
+            //    this.patient = new Patient();
+            //    this.patient.problems = [];
+
+            //    $("#txtname").val("");
+            //    $("#txtaddress").val("");
+            //    $("#txtemail").val("");
+
+            //    $alert(res);
+            //},"json")
+
+            $.ajax({
+                url: "/api/PatientApi/",
+                type: "POST",
+                data: JSON.stringify(check),
+                contentType: "application/json; charset=utf-8",
+                datatype: "json",
+                success: function (res) {
+
+                    //if (res.status === "error") {
+                    //    $("#errorContainer").html(res.ErrorHtml);
+                    //} else {
+
+                    console.log(res);
+
+                    $("#error").remove(errorName);
+                    $("#error").remove(errorEmail);
+                    $("#error").remove(errorAddress);
+
+                    var columns = ""
+                    res.forEach(function (e) {
+                        var column = '<tr><td>' + e.id + '</td><td>' + e.name + '</td><td>' + e.address + '</td><td>' + e.email + '</td></tr>';
+                        columns += column;
+                    });
+
+                    var table = $('<div class="container"><table class="table table-border"><tr><th>ID</th><th>Name</th><th>Address</th><th>Email</th></tr>' +
+                        columns + '</table></div>');
+
+                    $('body').append(table);
+                   
+
+                    this.patient = new Patient();
+                    this.patient.problems = [];
+
+                    $("#txtname").val("");
+                    $("#txtaddress").val("");
+                    $("#txtemail").val("");
+
+
+                },
+
+                error: function (response) {
+
+                     
+                    //console.log(errorThrown);
+
+                    var r = jQuery.parseJSON(response.responseText);
+
+                   
+
+                    if (r.errors.email) {
+
+                        var errorEmail = $('<div class="alert alert-danger alert-dismissible fade show ">'
+                            + r.errors.email + '</div >');
+                        $("#error").append(errorEmail);
+                    }
+
+                    if (r.errors.address) {
+
+                        var errorAddress = $('<div class="alert alert-danger alert-dismissible fade show " >'
+                            + r.errors.address + '</div >');
+                        $("#error").append(errorAddress);
+                    }
+
+                    if (r.errors.name) {
+
+                        var errorName = $('<div class="alert alert-danger alert-dismissible fade show " >'
+                            + r.errors.name + '</div >');
+                       
+                        $("#error").append(errorName);
+                    }
+
+                }
+
+            });
+
+        }
+        //post to the server
+        //function Display(){
+
+        //    displayPatient($(document.body));
+        //}
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="" style="margin-top:30px;">
+            <div class="">
+                <h5>New Patient</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="form-check-inline">
+
+                    <div class="form-group">
+                        <label>Patient Name:</label>
+                        <input type="text" onchange="UpdatePatient()" id="txtname" value="" class="form-control-sm mb-2 mr-sm-2" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Patient Address:</label>
+                        <input type="text" onchange="UpdatePatient()" id="txtaddress" value="" class="form-control-sm mb-2 mr-sm-2" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Patient Email:</label>
+                        <input type="text" onchange="UpdatePatient()" id="txtemail" value="" class="form-control-sm mb-2 mr-sm-2" />
+                    </div>
+                </div><br /><br />
+
+                            <div>
+                                <ul id="printPatient">
+                                 
+                                </ul>
+
+                            </div>
+
+                <div class="form-check-inline">
+                    <div class="form-group">
+                        <label>Patient Problems:</label>
+                        <input type="text" onchange="AddProblems()" id="txtproblem" name="problem" value="" class="form-control-sm mb-2 mr-sm-2" /><br />
+                    </div>
+                </div>
+                <br /><br />
+
+                <div class="form-check-inline">
+                    <div class="form-group">
+                        <label>Medicine Name:</label>
+                        <input type="text" id="txtMedicineName" value="" class="form-control-sm mb-2 mr-sm-2" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Doses:</label>
+                        <input type="text" id="txtNoOFTimesInDay" value="" class="form-control-sm mb-2 mr-sm-2" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="button" onclick="AddTreatment()" value="Add Treatment" class="btn btn-primary btn-sm mb-2 " />
+                    </div>
+                </div>
+                <br /><br />
+                <input type="button" onclick="AddProblemObj()" value="Add Problems" class="btn btn-primary btn-sm" />
+                <input type="button" onclick="Submit()" value="Add Patient" class="btn btn-primary btn-sm" />
+                <br /><br />
+                <div id="error">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
